@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lt.boot.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.lt.boot.model.entity.User">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+        <result property="userRole" column="user_role" jdbcType="VARCHAR"/>
+        <result property="userPhone" column="user_phone" jdbcType="VARCHAR"/>
+        <result property="userRealName" column="user_real_name" jdbcType="VARCHAR"/>
+        <result property="userGender" column="user_gender" jdbcType="TINYINT"/>
+        <result property="userAge" column="user_age" jdbcType="TINYINT"/>
+        <result property="userEmail" column="user_email" jdbcType="VARCHAR"/>
+        <result property="unionId" column="union_id" jdbcType="VARCHAR"/>
+        <result property="mpOpenId" column="mp_open_id" jdbcType="VARCHAR"/>
+        <result property="userAvatar" column="user_avatar" jdbcType="VARCHAR"/>
+        <result property="userBirthday" column="user_birthday" jdbcType="DATE"/>
+        <result property="userProfile" column="user_profile" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="creater" column="creater" jdbcType="BIGINT"/>
+        <result property="updater" column="updater" jdbcType="BIGINT"/>
+        <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,user_password,
+        user_role,user_phone,user_real_name,
+        user_gender,user_age,user_email,
+        union_id,mp_open_id,user_avatar,
+        user_birthday,user_profile,status,
+        create_time,update_time,creater,
+        updater,is_delete
+    </sql>
+</mapper>

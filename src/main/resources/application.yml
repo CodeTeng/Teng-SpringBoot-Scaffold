@@ -1,0 +1,45 @@
+# 公共配置文件
+spring:
+  application:
+    name: teng-boot-scaffold
+  # 默认 dev 环境
+  profiles:
+    active: dev
+  # 支持 swagger3
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-circular-references: true
+
+# MyBatisPlus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true # 驼峰映射开启
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开启控制台打印 SQL
+    cache-enabled: false # 使全局的映射器启用或禁用缓存
+    lazy-loading-enabled: false # 全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载
+    aggressive-lazy-loading: true # 当启用时，有延迟加载属性的对象在被调用时将会完全加载任意属性。否则，每种属性将会按需要加载
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除的实体字段名
+      logic-delete-value: 1 # 逻辑已删除值（默认为 1）
+      logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
+
+# 接口文档配置
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    description: 通用开发接口文档
+    email: teng2002823@outlook.com
+    concat: 木子Teng
+    url: https://github.com/CodeTeng
+    version: 1.0
+    group:
+      test1:
+        group-name: v1版本
+        api-rule: package
+        api-rule-resources:
+          - com.lt.boot.controller
+
